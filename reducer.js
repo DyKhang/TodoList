@@ -1,7 +1,7 @@
 import storage from "./util/storage.js";
 
 var initState = {
-  todos: storage.get(),
+  todos: storage.get() || [],
   editIndex: null,
   taskType: "personal",
   taskTypes: {
