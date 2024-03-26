@@ -1,0 +1,398 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lexend", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #987fff;
+}
+
+.container {
+  min-height: 650px;
+  position: relative;
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  margin-top: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+}
+
+.circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.circle-pink {
+  background-color: pink;
+  bottom: -74px;
+  left: -76px;
+}
+
+.circle-blue {
+  top: -50px;
+  left: 26%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(12, 172, 247, 1);
+}
+
+.circle-yellow {
+  background-color: yellow;
+  right: -110px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: -1;
+}
+
+.side-bar {
+  flex-grow: 0.2;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user__name {
+  margin-top: 5px;
+  color: #947df6;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.separate {
+  width: 70%;
+  height: 3px;
+  margin: 30px auto 0;
+  border-radius: 5px;
+  background-color: #987fff;
+}
+
+.user__slogan {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.filter__list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.filter {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.filter__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter__text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.filter__title {
+  font-size: 1.7rem;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  border: solid 2px #000;
+}
+
+.dot#personal {
+  background-color: pink;
+}
+
+.dot#freelance {
+  background-color: rgb(87, 87, 231);
+}
+
+.dot#work {
+  background-color: yellow;
+}
+
+.fa-calendar {
+  font-size: 3rem;
+}
+.app {
+  padding: 40px;
+  flex-grow: 1;
+  background-color: #987fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.app__text {
+  margin-left: 30px;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.app__heading {
+  margin-top: 10px;
+  margin-left: 30px;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.add-block {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  gap: 5px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-task {
+  flex: 1;
+  font-size: 1.9rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+
+.add-task::placeholder {
+  font-size: 1.7rem;
+}
+
+.todo-list {
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+}
+
+.todo-item + .todo-item {
+  margin-top: 10px;
+}
+
+.todo-item {
+  position: relative;
+  height: 46px;
+  display: flex;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #a4a3a3;
+}
+
+.todo-item__title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  margin-left: 15px;
+  user-select: none;
+}
+
+.todo-item__title.editing {
+  display: none;
+}
+
+.todo-item__title.editing + .editTitle {
+  display: block;
+}
+
+.todo-item__title.editing ~ .check-label {
+  display: none;
+}
+
+.check-label {
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.check-label::before,
+.check-label::after {
+  content: "";
+  position: absolute;
+}
+
+.check-label::before {
+  top: -8px;
+  left: -17px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #947df6;
+}
+
+.check-label::after {
+  top: -3px;
+  left: -13px;
+  rotate: 135deg;
+  width: 8px;
+  height: 3px;
+  border: solid;
+  border-color: #947df6 #947df6 transparent transparent;
+  display: none;
+}
+
+.todo-item__check:checked + .check-label::after {
+  display: block;
+}
+
+.fa-trash-can {
+  cursor: pointer;
+  padding-left: 14px;
+  font-size: 1.9rem;
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  translate: 0 -50%;
+  display: none !important;
+}
+
+.todo-item:hover .fa-trash-can {
+  display: block !important;
+}
+
+.fa-list-check {
+  cursor: pointer;
+  translate: 0 3px;
+  font-size: 1.9rem;
+  opacity: 0.4;
+}
+
+.fa-list-check.checked {
+  opacity: 1;
+}
+
+.toggleAll::before {
+  translate: 0 3px;
+  content: url("../assets/images/toggleAll.svg");
+  display: block;
+  width: 18px;
+  height: 18px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#toggleAll:checked + .toggleAll::before {
+  opacity: 1;
+}
+
+.task-completed-block {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.task-completed {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.task-process {
+  height: 40px;
+  position: relative;
+  margin-top: 7px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+.process-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.process-background {
+  width: 0;
+  height: 100%;
+  background-color: #000;
+}
+
+.editTitle {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-left: 15px;
+  display: none;
+  width: 100%;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  justify-content: center;
+}
+
+.button {
+  padding: 10px 20px;
+  border: solid 1px #987fff;
+  background-color: #755aea;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button.clearCompleted {
+  position: absolute;
+  right: 0;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button.active:hover {
+  opacity: 1;
+}
+
+.button.active {
+  background-color: #5230ec;
+}
