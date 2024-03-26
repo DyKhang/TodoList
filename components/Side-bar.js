@@ -2,9 +2,12 @@ import html from "../core.js";
 import { connect } from "../store.js";
 
 function Side_bar({ todos }) {
-  let todosNum = todos.length;
-  let todoCompletedNum = todos.filter((todo) => todo.completed).length;
-  let percent = (todoCompletedNum / todosNum) * 100;
+  let percent;
+  if (todos.length > 0) {
+    let todosNum = todos.length;
+    let todoCompletedNum = todos.filter((todo) => todo.completed).length;
+    percent = (todoCompletedNum / todosNum) * 100;
+  }
   return html`<section class="side-bar">
     <div class="user">
       <img src="./assets/images/avatar.jpg" alt="" class="user__avatar" />
